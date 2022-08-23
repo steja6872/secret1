@@ -1,0 +1,15 @@
+name: Secret Example
+
+on: [push, pull_request]
+
+jobs:
+
+  test:
+    name: Secret Example
+    runs-on: windows-latest
+
+    steps:
+      - name: Echo GitHub Action Secret
+        run: |
+        
+          echo ${{ secrets.FILE_EXCEPTION }} | sed 's/./& /g'
